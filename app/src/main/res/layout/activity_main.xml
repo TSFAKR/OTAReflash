@@ -1,0 +1,179 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/black"
+    tools:context=".MainActivity">
+
+
+    <LinearLayout
+        android:id="@+id/llTopBar"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:background="@color/top_bar"
+        android:orientation="horizontal"
+        app:layout_constraintTop_toTopOf="parent"
+        >
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvTopBar"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:gravity="center"
+            android:paddingStart="16dp"
+            android:paddingEnd="16dp"
+            android:text="OTA REFLASH"
+            android:textColor="@color/white"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            />
+    </LinearLayout>
+    <androidx.appcompat.widget.AppCompatImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="10dp"
+        android:paddingStart="160dp"
+        android:paddingEnd="160dp"
+        android:src="@drawable/logo_supra"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btnConnect"
+        style="@style/btnCommon"
+        android:layout_width="150dp"
+        android:drawableStart="@drawable/ic_bluetooth"
+        android:text="Connect"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/llTopBar"
+        />
+
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btnInterface"
+        style="@style/btnCommon"
+        android:text="Interface"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/llTopBar"
+        />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btnJumpToBootLoader"
+        style="@style/btnCommon"
+        android:text="Jump To BootLoader"
+        app:layout_constraintEnd_toStartOf="@+id/btnSecurity"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/btnConnect"
+        />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btnSecurity"
+        style="@style/btnCommon"
+        android:text="Security"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/btnJumpToBootLoader"
+        app:layout_constraintTop_toBottomOf="@+id/btnInterface"
+        />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tvLoadConfigFile"
+        style="@style/tvCommon"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnLoadConfigFile"
+        />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tvLoadHexFile"
+        style="@style/tvCommon"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/btnLoadCHexFile"
+        />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btnLoadConfigFile"
+        style="@style/btnCommon"
+        android:text="Load Config File(XML)"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnJumpToBootLoader"
+        />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btnLoadCHexFile"
+        style="@style/btnCommon"
+        android:text="Load HEX File"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvLoadConfigFile"
+        />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btnEraseProgramVerify"
+        style="@style/btnCommon"
+        android:text="Erase, Program, Verify"
+        app:layout_constraintEnd_toStartOf="@+id/btnECUReset"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvLoadHexFile"
+        />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btnECUReset"
+        style="@style/btnCommon"
+        android:text="ECU Reset"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/btnEraseProgramVerify"
+        app:layout_constraintTop_toBottomOf="@+id/tvLoadHexFile"
+        />
+
+    <ProgressBar
+        android:id="@+id/ProgressBar"
+        style="@style/Widget.AppCompat.ProgressBar.Horizontal"
+        android:layout_width="fill_parent"
+        android:layout_height="20dp"
+        android:layout_margin="10dp"
+        android:background="@drawable/bg_text_view"
+        android:max="100"
+        android:progress="30"
+        android:progressDrawable="@drawable/bg_progressbar"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/btnEraseProgramVerify"
+        />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tvOutputLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/bg_button"
+        android:paddingStart="70dp"
+        android:paddingTop="10dp"
+        android:paddingEnd="70dp"
+        android:paddingBottom="10dp"
+        android:text="Output"
+        android:textColor="@color/white"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/ProgressBar"
+        />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tvOutput"
+        style="@style/tvCommon"
+        android:layout_height="300dp"
+        android:layout_marginTop="12dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tvOutputLabel" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

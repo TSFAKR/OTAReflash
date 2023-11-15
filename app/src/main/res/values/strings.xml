@@ -1,0 +1,15 @@
+<resources>
+    <string name="app_name">OTA Reflash</string>
+    <string name="location_permission_disabled">Location Permission Disabled</string>
+    <string name="ok">OK</string>
+    <string name="cancel">Cancel</string>
+    <string name="location_permission_not_granted">Location Permission Granted</string>
+    <string name="btn_scan">Scan</string>
+    <string name="no_device_found">No Device Found</string>
+    <string name="char_uuid_missed_connection">0000110a-0000-1000-8000-00805f9b34fb</string>
+    <string name="char_uuid_emergency">0000110a-0000-1000-8000-00805f9b34fb</string>
+    <string name="char_uuid_emergency_call">0000110a-0000-1000-8000-00805f9b34fb</string>
+    <string name="char_uuid_catch">0000110a-0000-1000-8000-00805f9b34fb</string>
+    <string name="char_uuid_catch_all">0000110a-0000-1000-8000-00805f9b34fb</string>
+    <string name="char_uuid_missed_calls">0000110a-0000-1000-8000-00805f9b34fb</string>
+</resources>
